@@ -1,0 +1,29 @@
+{
+  "name": "lina",
+  "version": "1.0.0",
+  "description": "Lina dates Api with nodejs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralphxp/nodejslinaapi.git"
+  },
+  "author": "Codizium",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ralphxp/nodejslinaapi/issues"
+  },
+  "homepage": "https://github.com/ralphxp/nodejslinaapi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.9.1",
+    "sequelize": "^6.37.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
