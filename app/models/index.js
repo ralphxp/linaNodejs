@@ -20,5 +20,10 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.users = require("../models/Users.js")(sequelize, Sequelize);
+db.userinfo = require('../models/UserInfo.js')(sequelize, Sequelize);
+db.interest = require('../models/Interest.js')(sequelize, Sequelize);
+
+db.userinfo.belongsTo(db.users, {})
+
 
 module.exports = db;
