@@ -12,6 +12,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: true
         },
+        email:{
+            type: Sequelize.STRING,
+            allowNull:true
+        },
         dob: {
             type: Sequelize.STRING,
         },
@@ -21,9 +25,6 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         intensions:{
-            type:Sequelize.STRING
-        },
-        location:{
             type:Sequelize.STRING
         }
 
