@@ -22,7 +22,7 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Lina dates application." });
+  res.json({ message: "Welcome to Lina dates application.\nAn open source dating app" });
 });
 
 
