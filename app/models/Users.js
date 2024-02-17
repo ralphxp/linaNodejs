@@ -4,7 +4,8 @@ module.exports = (sequelize, Sequelize) => {
         phone: {
             type: Sequelize.STRING,
             allowNull: false,
-            require:true
+            require:true,
+            unique:true
         },
 
         verificationToken:{

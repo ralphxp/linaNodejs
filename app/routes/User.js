@@ -1,3 +1,5 @@
+const { FileUploader } = require("../middlewares/FileUpload");
+
 module.exports = app => {
     const Users = require("../controllers/UserController");
 

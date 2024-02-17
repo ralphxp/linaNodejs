@@ -1,14 +1,9 @@
 module.exports = (sequelize, Sequelize)=>{
-    const Interest = sequelize.define("Interest", {
-        user_id: {
-            type:Sequelize.INTEGER,
-            allowNull:false
-        },
+    const Interest= sequelize.define('Interests', {
         name:{
-            type:Sequelize.STRING,
-            allowNull:false
+            type:Sequelize.STRING
         }
-    });
+    })
 
     return Interest
 }

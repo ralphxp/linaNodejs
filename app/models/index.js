@@ -1,5 +1,4 @@
 const dbConfig = require("../config/db.config.js");
-
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
@@ -21,38 +20,36 @@ db.sequelize = sequelize;
 
 db.users = require("../models/Users.js")(sequelize, Sequelize);
 db.userinfo = require('../models/UserInfo.js')(sequelize, Sequelize);
-db.interest = require('../models/Interest.js')(sequelize, Sequelize);
+db.userinterest = require('./UserInterest.js')(sequelize, Sequelize);
 db.address = require('../models/Address.js')(sequelize, Sequelize)
+db.interest = require('../models/Interest.js')(sequelize, Sequelize);
 
-db.users.hasOne(db.userinfo, {
-  foriegnKey: "user_id",
-  as: "info"
-});
+// db.users.hasOne(db.userinfo, {
+//   // foriegnKey: "userId",
+//   as: "info"
+// });
 
-db.users.hasOne(db.address, {
-  foriegnKey: "user_id",
-  as: "location"
-});
+// db.users.hasOne(db.address, {
+//   foriegnKey: "userId",
+//   as: "address"
+// });
 
-db.users.hasMany(db.interest, {
-  foriegnKey: "user_id",
-  as: "interest"
-});
 
-db.interest.belongsTo(db.users, {
-  foriegnKey: "user_id",
-  as: "user"
-});
+
+db.users.belongsToMany(db.interest, {through:db.userinterest})
+
+// db.userinterest.belongsToMany(db.users, {throught:db.interest});
 
 db.userinfo.belongsTo(db.users, {
-  foriegnKey: "user_id",
+  foriegnKey: "userId",
   as: "user"
 });
 
 db.address.belongsTo(db.users, {
-  foriegnKey:"user_id",
-  as:"location"
+  foriegnKey:"userId",
+  as:"user"
 })
+
 
 
 

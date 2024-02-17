@@ -1,9 +1,6 @@
 module.exports = (sequelize, Sequelize)=>{
     const Address = sequelize.define('Address', {
-        user_id:{
-            type:Sequelize.INTEGER,
-            allowNull:false
-        },
+        
         latitude: {
             type:Sequelize.FLOAT,
             allowNull:true
