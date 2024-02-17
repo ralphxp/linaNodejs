@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/gflittnp/public_html/app_api
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R . $DEPLOYPATH
